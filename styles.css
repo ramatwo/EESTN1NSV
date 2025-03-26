@@ -1,133 +1,446 @@
-/* Estilos para el menú desplegable */
-.menu-toggle {
-    user-select: none;
-    position: absolute; /* Posiciona el botón en relación al contenedor más cercano con posición relativa o absoluta. */
-    top: 20px; /* Define la distancia del botón respecto a la parte superior del contenedor. */
-    left: 20px; /* Define la distancia del botón respecto al lado izquierdo del contenedor. */
-    font-size: 30px; /* Ajusta el tamaño de la fuente del botón, haciéndolo más grande. */
-    cursor: grabbing; /* Cambia el cursor a una mano cuando el usuario pasa sobre el botón. */
-    transition: transform 0.5s ease; /* Agrega una transición suave cuando el botón gira o cambia de forma. */
-    z-index: 1000; /* Asegura que el botón esté en el frente de otros elementos en la página. */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
 }
 
-/* Círculo detrás del "+" */
-.circle {
-    position: absolute; /* Posiciona el círculo en relación al contenedor más cercano con posición relativa o absoluta. */
-    top: 21px; /* Ubica el círculo ligeramente más alto que el botón del menú. */
-    left: 13px; /* Ubica el círculo ligeramente a la izquierda del botón del menú. */
-    width: 30px; /* Define el ancho del círculo. */
-    height: 30px; /* Define la altura del círculo. */
-    background-color: #a7a7a7; /* Establece el color de fondo del círculo. */
-    border-radius: 50%; /* Hace que el div tenga una forma circular. */
-    z-index: 999; /* Coloca el círculo detrás del botón del menú, pero delante de otros elementos de menor índice. */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.menu-closed {
-    display: none; /* Oculta el menú cuando está en estado cerrado. */
+header {
+    background-color: #35424a;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem;
 }
 
-.menu-open {
-    user-select: none;
-    display: block; /* Muestra el menú cuando está en estado abierto. */
-    position: absolute; /* Posiciona el menú en relación al contenedor más cercano con posición relativa o absoluta. */
-    left: 0; /* Ubica el menú en el borde izquierdo de la pantalla. */
-    top: 0; /* Ubica el menú en la parte superior de la pantalla. */
-    background-color: #333; /* Establece un color de fondo oscuro para el menú. */
-    width: 200px; /* Define el ancho del menú desplegable. */
-    height: 100%; /* Hace que el menú ocupe toda la altura de la pantalla. */
-    padding: 20px; /* Agrega un espacio interior alrededor del contenido del menú. */
-    z-index: 1000; /* Asegura que el menú esté en el frente de otros elementos. */
-    animation: slideIn 0.6s ease forwards; /* Aplica una animación de deslizamiento cuando el menú se abre. */
+header h1 {
+    margin-bottom: 0.5rem;
 }
 
-/* Separar el menú del "+" */
-.menu-open ul {
-    list-style-type: none; /* Elimina los puntos de la lista. */
-    padding: 50px 0 0 0; /* Ajusta el padding para separar la lista del botón del menú. */
+header h2 {
+    margin-top: 0;
+    font-weight: normal;
 }
 
-.menu-open ul li {
-    margin: 20px 0; /* Añade un margen vertical entre cada elemento de la lista. */
-    background-color: #444; /* Establece un color de fondo ligeramente más claro para cada elemento de la lista. */
-    padding: 10px; /* Agrega espacio interior alrededor del texto en cada elemento de la lista. */
-    border-radius: 5px; /* Redondea ligeramente las esquinas de cada elemento de la lista. */
+nav {
+    background-color: #2c3e50;
+    color: #ffffff;
 }
 
-.menu-open ul li a {
-    color: white; /* Establece el color del texto de los enlaces a blanco. */
-    text-decoration: none; /* Elimina el subrayado de los enlaces. */
-    font-size: 18px; /* Ajusta el tamaño de la fuente de los enlaces. */
-    display: block; /* Hace que los enlaces ocupen toda la anchura de sus elementos de lista. */
+nav ul {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0;
 }
 
-.menu-open ul li a:hover {
-    text-decoration: underline; /* Subraya el enlace cuando el usuario pasa sobre él. */
+nav ul li {
+    margin: 0.5rem;
 }
 
-/* Animación para la apertura del menú */
-@keyframes slideIn {
-    from {
-        width: 0; /* Define el ancho inicial del menú como 0. */
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    background-color: #3498db;
+}
+
+main {
+    flex: 1;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #f4f4f4;
+}
+
+section {
+    background-color: #ffffff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #35424a;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+}
+
+/* New styles */
+
+.hero {
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    padding: 3rem 1rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #2ecc71;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #27ae60;
+}
+
+.program-overview {
+    margin-bottom: 2rem;
+}
+
+.year-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.year-card {
+    background-color: #ecf0f1;
+    border-radius: 5px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.year-card h4 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.testimonials {
+    margin-bottom: 2rem;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+blockquote {
+    background-color: #f9f9f9;
+    border-left: 5px solid #3498db;
+    margin: 0;
+    padding: 1rem;
+    font-style: italic;
+}
+
+cite {
+    display: block;
+    text-align: right;
+    margin-top: 0.5rem;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.faq {
+    margin-bottom: 2rem;
+}
+
+details {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+summary {
+    padding: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+details p {
+    padding: 1rem;
+    margin: 0;
+}
+
+/* Responsive design improvements */
+@media (max-width: 768px) {
+    .year-grid, .testimonial-grid {
+        grid-template-columns: 1fr;
     }
-    to {
-        width: 200px; /* Expande el ancho del menú a 200px durante la animación. */
+
+    main {
+        padding: 1rem;
     }
 }
 
-/* Estilo para el slider */
-.container {
-    text-align: center; /* Centra el texto dentro del contenedor. */
-    position: relative; /* Permite que los elementos posicionados absolutamente dentro del contenedor se coloquen en relación a él. */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
-#slider {
-    width: 80%; /* El slider ocupa el 80% del ancho disponible. */
-    height: 500px; /* Define la altura del slider en 500px. */
-    margin: auto; /* Centra el slider horizontalmente dentro de su contenedor. */
-    position: relative; /* Permite que los elementos posicionados absolutamente dentro del slider se coloquen en relación a él. */
-    overflow: hidden; /* Oculta cualquier contenido que se salga del área del slider. */
-    border: 2px solid black; /* Añade un borde negro de 2px alrededor del slider. */
-    z-index: 1; /* Coloca el slider por encima de algunos otros elementos. */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .cta-button {
+        display: block;
+        margin: 1rem auto 0;
+        max-width: 200px;
+    }
 }
 
-#slider img {
-    width: 50%; /* La imagen dentro del slider ocupa el 50% de su contenedor. */
-    margin: 0 auto; /* Centra la imagen horizontalmente dentro del slider. */
-    display: block; /* Hace que la imagen se comporte como un bloque, ocupando toda la anchura disponible. */
-    height: auto; /* Mantiene la proporción original de la imagen. */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
 }
 
-#slide-content {
-    display: flex; /* Aplica un diseño flexible al contenido del slider. */
-    flex-direction: column; /* Organiza los elementos del slider en una columna. */
-    align-items: center; /* Centra horizontalmente los elementos hijos dentro del slider. */
-    justify-content: center; /* Centra verticalmente los elementos hijos dentro del slider. */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-#slider h2, #slider p {
-    margin: 10px 0; /* Añade un margen vertical de 10px alrededor de los títulos y párrafos en el slider. */
+header {
+    background-color: #35424a;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem;
 }
 
-.nav-btn {
-    position: absolute; /* Posiciona los botones de navegación en relación al contenedor del slider. */
-    top: 50%; /* Centra verticalmente los botones de navegación dentro del slider. */
-    transform: translateY(-50%); /* Ajusta la posición de los botones para que queden perfectamente centrados verticalmente. */
-    background-color: transparent; /* Hace que el fondo de los botones de navegación sea transparente. */
-    border: none; /* Elimina cualquier borde alrededor de los botones de navegación. */
-    font-size: 30px; /* Define un tamaño de fuente grande para los botones de navegación. */
-    cursor: pointer; /* Cambia el cursor a una mano cuando el usuario pasa sobre los botones de navegación. */
-    z-index: 1; /* Coloca los botones de navegación por encima de otros elementos dentro del slider. */
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }
 
-#prev {
-    left: 10px; /* Posiciona el botón de navegación anterior en la parte izquierda del slider. */
+.logo {
+    width: 80px;
+    height: auto;
 }
 
-#next {
-    right: 10px; /* Posiciona el botón de navegación siguiente en la parte derecha del slider. */
+header h1 {
+    margin-bottom: 0.5rem;
 }
 
-/* Animación para convertir "+" en "x" */
-.rotate {
-    transform: rotate(180deg); /* Gira el botón del menú 45 grados para convertir el "+" en una "x". */
+header h2 {
+    margin-top: 0;
+    font-weight: normal;
 }
+
+nav {
+    background-color: #2c3e50;
+    color: #ffffff;
+}
+
+nav ul {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0.5rem;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    background-color: #3498db;
+}
+
+main {
+    flex: 1;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #f4f4f4;
+}
+
+section {
+    background-color: #ffffff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #35424a;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+}
+
+/* New styles */
+
+.hero {
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    padding: 3rem 1rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #2ecc71;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #27ae60;
+}
+
+.program-overview {
+    margin-bottom: 2rem;
+}
+
+.year-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.year-card {
+    background-color: #ecf0f1;
+    border-radius: 5px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.year-card h4 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.testimonials {
+    margin-bottom: 2rem;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+blockquote {
+    background-color: #f9f9f9;
+    border-left: 5px solid #3498db;
+    margin: 0;
+    padding: 1rem;
+    font-style: italic;
+}
+
+cite {
+    display: block;
+    text-align: right;
+    margin-top: 0.5rem;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.faq {
+    margin-bottom: 2rem;
+}
+
+details {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+summary {
+    padding: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+details p {
+    padding: 1rem;
+    margin: 0;
+}
+
+/* Responsive design improvements */
+@media (max-width: 768px) {
+    .year-grid, .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    .header-content {
+        flex-direction: column;
+    }
+
+    .logo {
+        width: 60px;
+    }
+}
+
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .cta-button {
+        display: block;
+        margin: 1rem auto 0;
+        max-width: 200px;
+    }
+}
+

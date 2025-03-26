@@ -1,46 +1,116 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8"> <!-- Define la codificación de caracteres como UTF-8, que es compatible con la mayoría de los caracteres y lenguajes. -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura la escala inicial de la página para que sea adaptable a diferentes tamaños de pantalla, como en dispositivos móviles. -->
-    <title>Página Interactiva</title> <!-- Establece el título de la página que aparecerá en la pestaña del navegador. -->
-    <link rel="stylesheet" href="styles.css"> <!-- Vincula la hoja de estilos CSS externa llamada "styles.css" para dar formato a la página. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E.E.S.T N°1 "Nuestra señora del Valle" - Orientación en Informática</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Menú desplegable -->
-    <div id="menu" class="menu-closed"> <!-- Contenedor del menú desplegable, inicialmente cerrado, con ID "menu" y clase "menu-closed". -->
-        <ul> <!-- Lista no ordenada para los elementos del menú. -->
-            <li><a href="index.html">Menú</a></li> <!-- Enlace al archivo "index.html" con el texto "Menú". -->
-            <li><a href="cuarto.html">4to año</a></li> <!-- Enlace al archivo "cuarto.html" con el texto "4to año". -->
-            <li><a href="quinto.html">5to año</a></li> <!-- Enlace al archivo "quinto.html" con el texto "5to año". -->
-            <li><a href="sexto.html">6to año</a></li> <!-- Enlace al archivo "sexto.html" con el texto "6to año". -->
-            <li><a href="septimo.html">7mo año</a></li> <!-- Enlace al archivo "septimo.html" con el texto "7mo año". -->
-            <li><a href="kit.html">Kit básico</a></li> <!-- Enlace al archivo "kit.html" con el texto "Kit básico". -->
-            <li><a href="creditos.html">Créditos</a></li> <!-- Enlace al archivo "creditos.html" con el texto "Créditos". -->
-        </ul>
-    </div>
-
-    <!-- Círculo detrás del signo "+" -->
-    <div class="circle"></div> <!-- Div que representa un círculo decorativo detrás del botón del menú. Utiliza la clase "circle" para darle estilo. -->
-
-    <!-- Botón para abrir/cerrar menú -->
-    <div class="menu-toggle" id="menuToggle">+</div> <!-- Botón con el signo "+" que abre o cierra el menú. Tiene ID "menuToggle" para su manipulación en JavaScript. -->
-
-    <!-- Contenido principal con el slider -->
-    <div class="container"> <!-- Contenedor principal de la página con la clase "container". -->
-        <h1>INFORMATICA TECNICA</h1> <!-- Título principal de la página. -->
-        <div id="slider"> <!-- Contenedor del slider con ID "slider". -->
-            <div class="slide" id="slide-content"> <!-- Contenedor de una diapositiva del slider, con la clase "slide" y el ID "slide-content". -->
-                <h2>Imagen 1</h2> <!-- Título de la primera imagen en el slider. -->
-                <img src="1eest_n_1.jpg" alt="Imagen 1"> <!-- Imagen que se muestra en la primera diapositiva del slider, con el archivo "1eest_n_1.jpg" y texto alternativo "Imagen 1". -->
-                <p>Texto 1</p> <!-- Descripción o texto relacionado con la primera imagen del slider. -->
+    <div class="page-container">
+        <header>
+            <div class="header-content">
+                <img src="logo.png" alt="Logo de E.E.S.T N°1" class="logo">
+                <div>
+                    <h1>E.E.S.T N°1 "Nuestra señora del Valle"</h1>
+                    <h2>Orientación en Informática</h2>
+                </div>
             </div>
-            <button id="prev" class="nav-btn">&lt;</button> <!-- Botón de navegación para ir a la diapositiva anterior, identificado con ID "prev". -->
-            <button id="next" class="nav-btn">&gt;</button> <!-- Botón de navegación para ir a la diapositiva siguiente, identificado con ID "next". -->
-        </div>
-        <p>E.E.S.T Nstra Señora del Valle</p> <!-- Párrafo de texto que muestra el nombre de la institución. -->
+        </header>
+        <nav aria-label="Navegación principal">
+            <ul role="menubar">
+                <li role="none"><a href="index.html" role="menuitem" aria-current="page">Inicio</a></li>
+                <li role="none"><a href="year1.html" role="menuitem">1° Año</a></li>
+                <li role="none"><a href="year2.html" role="menuitem">2° Año</a></li>
+                <li role="none"><a href="year3.html" role="menuitem">3° Año</a></li>
+                <li role="none"><a href="year4.html" role="menuitem">4° Año</a></li>
+                <li role="none"><a href="year5.html" role="menuitem">5° Año</a></li>
+                <li role="none"><a href="year6.html" role="menuitem">6° Año</a></li>
+                <li role="none"><a href="year7.html" role="menuitem">7° Año</a></li>
+            </ul>
+        </nav>
+        <main>
+            <section class="hero">
+                <h2>Forma tu futuro en Informática</h2>
+                <p>Descubre nuestro programa de 7 años en ciencias de la computación</p>
+                <a href="#programa" class="cta-button">Explorar Programa</a>
+            </section>
+            <section>
+                <h2>Bienvenidos a la Orientación en Informática</h2>
+                <p>Nuestra escuela ofrece un programa completo de 7 años en ciencias de la computación. Explora los enlaces de arriba para obtener más información sobre cada año del programa.</p>
+            </section>
+            <section id="programa" class="program-overview">
+                <h3>Resumen del Programa</h3>
+                <div class="year-grid">
+                    <div class="year-card">
+                        <h4>1° Año</h4>
+                        <p>Fundamentos de programación y hardware</p>
+                    </div>
+                    <div class="year-card">
+                        <h4>2° Año</h4>
+                        <p>Desarrollo web básico y estructuras de datos</p>
+                    </div>
+                    <div class="year-card">
+                        <h4>3° Año</h4>
+                        <p>Programación avanzada y bases de datos</p>
+                    </div>
+                    <div class="year-card">
+                        <h4>4° Año</h4>
+                        <p>Desarrollo de aplicaciones y redes</p>
+                    </div>
+                    <div class="year-card">
+                        <h4>5° Año</h4>
+                        <p>Inteligencia artificial y seguridad informática</p>
+                    </div>
+                    <div class="year-card">
+                        <h4>6° Año</h4>
+                        <p>Desarrollo de software y proyectos avanzados</p>
+                    </div>
+                    <div class="year-card">
+                        <h4>7° Año</h4>
+                        <p>Especialización y proyecto final</p>
+                    </div>
+                </div>
+            </section>
+            <section id="highlights">
+                <h3>Destacados del Programa</h3>
+                <ul>
+                    <li>Fundamentos de programación</li>
+                    <li>Desarrollo web</li>
+                    <li>Bases de datos</li>
+                    <li>Redes y seguridad</li>
+                    <li>Inteligencia artificial y machine learning</li>
+                </ul>
+            </section>
+            <section class="testimonials">
+                <h3>Lo que dicen nuestros estudiantes</h3>
+                <div class="testimonial-grid">
+                    <blockquote>
+                        "Este programa me ha preparado increíblemente bien para mi carrera en tecnología."
+                        <cite>- Ana G., Graduada 2022</cite>
+                    </blockquote>
+                    <blockquote>
+                        "Los profesores son expertos en su campo y realmente se preocupan por nuestro éxito."
+                        <cite>- Carlos M., Estudiante de 5° Año</cite>
+                    </blockquote>
+                </div>
+            </section>
+            <section class="faq">
+                <h3>Preguntas Frecuentes</h3>
+                <details>
+                    <summary>¿Qué habilidades aprenderé en este programa?</summary>
+                    <p>Nuestro programa cubre una amplia gama de habilidades, incluyendo programación, desarrollo web, bases de datos, redes, seguridad informática, e inteligencia artificial.</p>
+                </details>
+                <details>
+                    <summary>¿Necesito experiencia previa en programación?</summary>
+                    <p>No se requiere experiencia previa. Nuestro programa está diseñado para comenzar desde los fundamentos y avanzar gradualmente.</p>
+                </details>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2023 E.E.S.T N°1 "Nuestra señora del Valle". Todos los derechos reservados.</p>
+        </footer>
     </div>
-
-    <script src="script.js"></script> <!-- Incluye el archivo de JavaScript externo "script.js" para agregar interactividad a la página. -->
+    <script src="script.js"></script>
 </body>
 </html>
